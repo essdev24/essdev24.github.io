@@ -66,10 +66,10 @@ img {
 html {
     --bg: #FFF;
     --bg-secondary: #f3f4f6;
-    --headings: #1e293b;
-    --text: #374151;
+    --headings: #0ed2e0;
+    --text: #314242;
     --text-secondary: #6b7280;
-    --links: #6366f1;
+    --links: #00c3ff;
     --highlight: #FFECB2; // light yellow
     --code-text: #9D174D;
     --share-text: #999;
@@ -77,8 +77,8 @@ html {
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   html, body  {
-      --headings: #74c0fc;
-      --links: #91A7FF;
+      --headings: #74ecfc;
+      --links: #7ffaea;
       --highlight: #41C7C7;
       --bg: #1f242A;
       --bg-secondary: #323945;
