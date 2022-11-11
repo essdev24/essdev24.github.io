@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-11T12:14:37+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">essdev24</title><subtitle>Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.
+</subtitle><author><name>essuanlive</name></author><entry><title type="html">Wiki Editing</title><link href="http://localhost:4000/artandfeminism" rel="alternate" type="text/html" title="Wiki Editing" /><published>2019-02-21T00:00:00+00:00</published><updated>2019-02-21T00:00:00+00:00</updated><id>http://localhost:4000/artandfeminism</id><content type="html" xml:base="http://localhost:4000/artandfeminism">&lt;p&gt;Wikipedia is precisely an online encyclopedia contributed by a group of Wikipedians. They carefully edit, verify and create useful information on Wikipedia. Wikimedia does not allow any copyright information to be uploaded. If found the page will be taken down immediately. This appropriate measure makes Wikipedia credible. Thanks to Wikimedia Ghana User Group(Sandister, Enock, and Justice) for facilitating this workshop and properly introducing me to the world of wiki editing. The intensive workshop aimed to promote arts and help minimize gender imbalance on Wikipedia. 
+Women are celebrated in the month of March, as part of the activities, Wikipedia is hosting workshops to train editors to improve on articles on notable women. Art and Feminism is a campaign coordinated to improve information about women on Wikipedia. This helps to address the gender imbalance on Wikipedia and also increase the number of editors. Find out about art and feminism &lt;a href=&quot;https://artandfeminism.org&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Before I haul you through Wikipedia, note the following rules;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;As a new editor, do not create a page always edit. Verify credible sources, dead pages, and links.&lt;/li&gt;
+  &lt;li&gt;Add a comment to whatever changes you made on the page.&lt;/li&gt;
+  &lt;li&gt;Use the visual editor till you become vexed with the markdown language for editing then you can use the edit source option.
+Now, let’s start with our editing. We are going to - Improve introduction and add a reference.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Become a wikipedian &lt;a href=&quot;https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;amp;returnto&quot;&gt;Sign-Up&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When editing check for dates, linked pages, referenced links, etc. This makes the information more credible. I will be editing MzVee’s (Ghanaian Singer) article. - First, I will reference the date of birth from a source. We search the internet on articles confirming her date of birth, and we reference it.&lt;/p&gt;
+
+&lt;p&gt;Search for “page name” wiki whiles you’re logged in to the wiki page. To get the article you want to edit.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;‘Click on edit’
+&lt;img src=&quot;/assets/images/1.jpg&quot; alt=&quot;image 1&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;By default, ‘Edit’ is already using the visual editor setting. Go to the article section.
+&lt;img src=&quot;/assets/images/2.jpg&quot; alt=&quot;image 2&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;*‘Make sure you have found your source before this by searching for news on the subject on &lt;a href=&quot;https://www.google.com&quot;&gt;google&lt;/a&gt; to verify your sources’ (I searched for her birthdays did the math to be sure what the articles are saying is true before adding.) Insert cursor on where you want to reference - I will be referencing her date of birth. Click on cite.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Copy URL from the external article and paste it to the Cite button pop-up&lt;/strong&gt;
+&lt;img src=&quot;/assets/images/4.jpg&quot; alt=&quot;image 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on &lt;strong&gt;generate and insert the cite&lt;/strong&gt; We can also reuse a cite by following the same procedure but rather we click on Re-use to choose the source. Add if it is already on the page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/5.jpg&quot; alt=&quot;image 4&quot; /&gt;
+Click on &lt;strong&gt;PUBLISH CHANGES&lt;/strong&gt; and comment. Your editing will be saved.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note the tick box Minor Edit is for fewer edits and Watch this page is for tracking to keep watch on the page. This will be further explained when you attend one of our workshops&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wmghug.wordpress.com&quot;&gt;Join Wikimedia Ghana User Group&lt;/a&gt; for more info on our meetings and activities.&lt;/p&gt;</content><author><name>essuanlive</name></author><category term="wikimedia" /><category term="wikipedia" /><category term="art and feminism" /><summary type="html">Wikipedia is precisely an online encyclopedia contributed by a group of Wikipedians. They carefully edit, verify and create useful information on Wikipedia. Wikimedia does not allow any copyright information to be uploaded. If found the page will be taken down immediately. This appropriate measure makes Wikipedia credible. Thanks to Wikimedia Ghana User Group(Sandister, Enock, and Justice) for facilitating this workshop and properly introducing me to the world of wiki editing. The intensive workshop aimed to promote arts and help minimize gender imbalance on Wikipedia. Women are celebrated in the month of March, as part of the activities, Wikipedia is hosting workshops to train editors to improve on articles on notable women. Art and Feminism is a campaign coordinated to improve information about women on Wikipedia. This helps to address the gender imbalance on Wikipedia and also increase the number of editors. Find out about art and feminism here</summary></entry><entry><title type="html">OCA Accra Experience</title><link href="http://localhost:4000/oca-accra" rel="alternate" type="text/html" title="OCA Accra Experience" /><published>2019-02-15T00:00:00+00:00</published><updated>2019-02-15T00:00:00+00:00</updated><id>http://localhost:4000/OCA-Accra</id><content type="html" xml:base="http://localhost:4000/oca-accra">&lt;p&gt;Accra is one of the cities in Ghana which is noted as a flood prone urban area. This is as a result of the existence of population density,bad drainage system and improper dumping of waste materials. In efforts to minimize the occurrence of flooding, Open Cities Africa, an initiative of the World Bank is helping some African cities curb the menace. The aim of this project &lt;a href=&quot;https://opencitiesproject.org&quot;&gt;Open City Africa&lt;/a&gt; is to enable Accra attain the world’s standard of a clean and resilient city.&lt;/p&gt;
+
+&lt;p&gt;The areas targeted in Accra which are flood-prone areas are; Alogboshie, Akweteyman, Alajo and Nima, located along the Odaw River. Open Cities, is putting in all efforts to contribute in mapping out these flood prone areas to make it easy to solve the menace.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/akwetrash.JPG&quot; alt=&quot;image 1&quot; /&gt;
+&lt;em&gt;This image was taken during our field data collection&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I am &lt;a href=&quot;https://www.openstreetmap.org/user/Essuanlive&quot;&gt;essuanlive&lt;/a&gt;, a contributor to the Building and Data cleaning team. Our work is identified with collecting all points of interest,dumping waste area, flood history, health facilities, schools with the exception of drains which is carried out by another team.
+We use simple multiple tools to enhance our data collection. Example of such tools are &lt;a href=&quot;https://opendatakit.org&quot;&gt;Open Data Kit&lt;/a&gt; and [Open Map Kit]&amp;lt;/a&amp;gt; (OMK). These tools made it easier to collect data from the field since the procedure was paperless, assuring its quality.
+Our second phase of mapping was in Akweteyman. The testing was started on Friday, 25th of January 2019.
+We recorded a few issues that were resolved this gave the team the Green light to start the field Data collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/25_01.JPG&quot; alt=&quot;image 2&quot; /&gt;
+&lt;em&gt;The Field Data Collection team been dispatched to test the forms on the field&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Data collection started on Monday, 28th of January 2019. Engaging with the community was challenging since majority of the populace had no idea about Open Cities Africa, HotOSM and the other organizations supporting the project.
+Fortunately, my team which consisted of six field data collectors were well vexed with the languages of the residents. This made it easier for us to interact with them.
+They residents expressed their concern of incidences of flooding which has affected them greatly. They also recounted of a flooding which killed a University student two years ago. The incidence has also caused serious erosion in the suburb. 
+This indeed was necessary for our work and also provide field data.&lt;/p&gt;
+
+&lt;p&gt;During our data collection, we noticed that most of the routes leading to the public toilets have no access route to cars. We found out that most of them use the major ditch to dispose of the waste.
+Nevertheless, we are yet to clean and verify the work done by field data collectors on Data quality.&lt;/p&gt;</content><author><name>essuanlive</name></author><category term="openstreetmap" /><category term="OCA" /><category term="garid" /><category term="hotosm" /><category term="Akweteman" /><category term="osmghana" /><summary type="html">Accra is one of the cities in Ghana which is noted as a flood prone urban area. This is as a result of the existence of population density,bad drainage system and improper dumping of waste materials. In efforts to minimize the occurrence of flooding, Open Cities Africa, an initiative of the World Bank is helping some African cities curb the menace. The aim of this project Open City Africa is to enable Accra attain the world’s standard of a clean and resilient city.</summary></entry></feed>
