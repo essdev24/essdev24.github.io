@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="html" data-theme="dark"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    
+      No Arduino, No Code: Building an Analog Ultrasonic Distance Sensor from Scratch
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.7.3 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="No Arduino, No Code: Building an Analog Ultrasonic Distance Sensor from Scratch" />
+<meta name="author" content="essuanlive" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that." />
+<meta property="og:description" content="Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that." />
+<link rel="canonical" href="http://localhost:4000/projects/non-invasive-analog-distance-sensor/" />
+<meta property="og:url" content="http://localhost:4000/projects/non-invasive-analog-distance-sensor/" />
+<meta property="og:site_name" content="essdev24" />
+<meta property="og:image" content="https://soopr.xyz/images/card?url=http://localhost:4000/projects/non-invasive-analog-distance-sensor/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="https://soopr.xyz/images/card?url=http://localhost:4000/projects/non-invasive-analog-distance-sensor/" />
+<meta property="twitter:title" content="No Arduino, No Code: Building an Analog Ultrasonic Distance Sensor from Scratch" />
+<meta name="twitter:site" content="@essuanlive" />
+<meta name="twitter:creator" content="@essuanlive" />
+<script type="application/ld+json">
+{"@type":"WebPage","description":"Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.","headline":"No Arduino, No Code: Building an Analog Ultrasonic Distance Sensor from Scratch","url":"http://localhost:4000/projects/non-invasive-analog-distance-sensor/","author":{"@type":"Person","name":"essuanlive"},"@context":"https://schema.org"}</script>
+<script async defer data-soopr-token="" src="https://sdk.soopr.co/soopr.js"  ></script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="essdev24" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Favicon -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+    <script type="text/javascript">
+  window.addEventListener('load', themeChange);
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme)
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+  function themeChange() {
+    let button = document.querySelector('.theme-toggle');
+
+    button.addEventListener('click', function (e) {
+      let currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        transition();
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        transition();
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    let transition = () => {
+      document.documentElement.classList.add('transition');
+      window.setTimeout(() => {
+        document.documentElement.classList.remove('transition');
+      }, 1000);
+    }
+  }
+</script>
+
+
+  
+</head>
+<body>
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/">home..</a>
+<h1 class="post-title">No Arduino, No Code: Building an Analog Ultrasonic Distance Sensor from Scratch</h1>
+<p class="post-date text-bold">
+  
+  
+
+
+  
+  
+  (1034 Words, 
+  6 Minutes)
+  
+
+</p>
+
+<div class="soopr-btn"
+   data-twitter="SooprCo"
+>
+</div>
+
+
+  <div class="">
+    
+  </div>
+
+
+<p>When most people think about building a distance sensor, they reach for an Arduino, plug in an ultrasonic module, and let a microcontroller handle all the timing. I wanted to see if I could skip that step entirely — no code, no MCU, just discrete analog ICs doing the work of generating, sending, receiving, and timing an ultrasonic pulse. This post walks through how I built it, what worked, what fought back, and what I’d change next time.</p>
+
+<h2 id="the-idea">The idea</h2>
+
+<p>Ultrasonic ranging is a well-established technique: send a high-frequency sound pulse, measure how long it takes to bounce back off a surface, and multiply that time by the speed of sound to get distance. It’s the same principle behind sonar and most of the cheap ultrasonic modules you’ll find online — the difference here is that every one of those steps (signal generation, mixing, amplification, filtering, edge-detection, and counting) had to be built out of raw ICs and passive components instead of a few lines of firmware.</p>
+
+<p>The core components I settled on were the XR8038 (function generator), NE555 (timing/oscillator), CD4053B (multiplexer), TL072CP (op-amp), and a handful of CMOS logic ICs — CD4013BE, CD4069CN, and CD4018BE — to handle the digital side of edge detection and gating.</p>
+
+<p><em>Figure 1 — functional block diagram of the whole system, transmitter through display.</em></p>
+
+<h2 id="how-the-system-is-laid-out">How the system is laid out</h2>
+
+<p>At a high level, the signal path looks like this:</p>
+
+<ol>
+  <li>A function generator produces a 40 kHz carrier — the actual ultrasonic tone that gets transmitted.</li>
+  <li>A slower oscillator produces a low-frequency tone that gets mixed in, which the receiver later uses as a reference for timing.</li>
+  <li>The mixed signal drives the ultrasonic transmitter.</li>
+  <li>The receiver picks up the reflected signal, amplifies it, rectifies it, filters it, and cleans it up with a Schmitt trigger.</li>
+  <li>A flip-flop turns that cleaned signal into a sharp pulse.</li>
+  <li>A clock/counter circuit uses that pulse to time the round trip and display the result as a distance.</li>
+</ol>
+
+<p>None of this happens in software — it’s all timing relationships built into the resistor and capacitor values feeding each IC.</p>
+
+<h2 id="generating-the-signal">Generating the signal</h2>
+
+<p>The XR8038 handled the 40 kHz square wave that actually gets sent out by the transmitter. I went with a square wave rather than a sine specifically because of how the signal attenuates over distance — square waves held up better for this setup. Getting a clean, symmetrical wave out of the XR8038 comes down to hitting a 50% duty cycle, which is set with a single timing resistor using:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f = 0.15 / (R · C)
+</code></pre></div></div>
+
+<p>The NE555 supplied a separate, much slower oscillation (10 Hz) that gets combined with the 40 kHz carrier. Getting the NE555 into the right duty cycle meant working through the standard 555 astable timing relationship:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f = 1 / T
+T ≈ (R_A + 2·R_B) · C
+</code></pre></div></div>
+
+<p>Both of these signals feed into a CD4053B multiplexer, which mixes the fast carrier with the slow tone. That combined signal is what actually drives the transmitter — and it’s also what makes the receiver’s job possible, since the receiver is really looking for that slower envelope riding on top of the carrier.</p>
+
+<p><em>Figure 2 — full schematic, ideally a slightly zoomed-in crop of the transmitter block.</em></p>
+
+<h2 id="picking-the-signal-back-out-of-the-noise">Picking the signal back out of the noise</h2>
+
+<p>This is where most of the real design work happened. A reflected ultrasonic signal is weak and noisy by the time it gets back to the receiver, so the receive chain has to do a lot of cleanup before you can extract a usable timing edge from it.</p>
+
+<p>The chain looks like this:</p>
+
+<ul>
+  <li>TL072CP — first-stage amplifier, boosting the incoming signal with roughly 10x gain.</li>
+  <li>Rectifier — a fast switching diode in parallel with a resistor, which strips out the negative half of the waveform.</li>
+  <li>Low-pass filter — tuned to pass only the slower modulating envelope (the 10 Hz tone), filtering out the 40 kHz carrier once it’s done its job.</li>
+  <li>Schmitt trigger — built from a comparator with a pull-up resistor to add hysteresis, which is what keeps noise from causing false triggering. Without this stage, the spikes in the raw signal would get misread as valid edges.</li>
+</ul>
+
+<p><em>Figure 3 — assembled boards with wiring color code (red = VCC, blue = VEE, black = ground, yellow = signal).</em></p>
+
+<p>Once the signal is clean, it gets fed into a CD4013BE flip-flop, which converts the leading edge into a short, sharp pulse — essentially a synthetic “start” marker for the timing circuit. That narrow pulse only works because of how sharp it is; a slow edge here would make the whole timing measurement fuzzy. A second, independently generated 32 kHz signal from another NE555 stage gets combined with this pulse through CD4018BE (acting as an AND gate) and CD4069CN (acting as an inverter) to produce the final signal that drives the counter.</p>
+
+<p><em>Figure 4(d) — oscilloscope capture of the narrow pulse.</em></p>
+
+<h2 id="testing-it">Testing it</h2>
+
+<p>I used LTSpice to simulate the circuit before ever touching a breadboard, and documented the layout in KiCad. Once it was physically built, testing came down to an oscilloscope with two probes on CH1 and CH2, tracing the signal at each stage:</p>
+
+<ul>
+  <li>The raw multiplexed signal was noticeably noisy — visible spikes that, if left alone, would throw off the timing measurement.</li>
+  <li>After the amplifier, rectifier, and low-pass filter, the waveform cleaned up into a proper square pulse with the modulation riding on top.</li>
+  <li>The Schmitt trigger stage produced a clean, shifted square pulse — the “leading signal” the rest of the system relies on.</li>
+  <li>The final narrow pulse output showed the sharp charge/discharge behavior expected from the hysteresis stage.</li>
+</ul>
+
+<p><em>Figure 4(a–c) — oscilloscope traces at each cleanup stage, shown side by side.</em></p>
+
+<p>With everything wired up, the display panel read out 76 cm for the test distance — confirming the whole chain, from carrier generation to final count, actually worked end to end.</p>
+
+<p><em>Figure 5 — photo of the display panel showing the 76 cm reading.</em></p>
+
+<h2 id="what-id-fix-next">What I’d fix next</h2>
+
+<p>Pure analog signal chains are unforgiving when it comes to attenuation. The TL072’s gain helped, but noise-driven spikes were still a persistent problem — the circuit would occasionally read a higher amplitude than the true signal, which I partially solved by improving the grounding scheme (multiple ground points rather than a single shared one). Even with that fix, I think there’s more headroom here: an additional amplification stage after the initial receive gain would likely stretch the usable range further and make the whole measurement more robust to attenuation over longer distances.</p>
+
+<h2 id="takeaways">Takeaways</h2>
+
+<p>This project was as much about learning to read manufacturer datasheets and translate them into working timing behavior as it was about building a rangefinder. Every stage — the XR8038’s duty cycle equation, the NE555’s charge/discharge timing, the Schmitt trigger’s hysteresis band — came directly out of interpreting datasheet specs and turning them into real resistor and capacitor values. If you’re looking for a way to really understand why a microcontroller-based ultrasonic sensor works the way it does, building the analog version from scratch is a surprisingly good way to find out.</p>
+
+
+        
+          <button title="Toggle Theme" class="theme-toggle">
+  <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+    <path d="
+             M 16 0
+             A 16 16 0 0 0 16 32
+             z">
+    </path>
+  </svg>
+</button>
+
+        
+        <div class="credits">&copy;&nbsp;2026&nbsp;essuanlive
+          &nbsp;
+          •
+          &nbsp;Powered by <a href="https://www.soopr.co" target="_blank" rel="noreferrer">Soopr</a>
+          &nbsp;
+          •
+          &nbsp;Theme&nbsp; <a href="https://github.com/abhinavs/moonwalk" target="_blank" rel="noreferrer">Moonwalk</a>
+        </div>
+      </div>
+    </main><script async defer src="https://sdk.soopr.co/soopr.js"></script></body>
+</html>
