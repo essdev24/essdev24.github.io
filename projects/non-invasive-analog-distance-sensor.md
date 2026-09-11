@@ -12,7 +12,9 @@ Ultrasonic ranging is a well-established technique: send a high-frequency sound 
 
 The core components I settled on were the **XR8038** (function generator), **NE555** (timing/oscillator), **CD4053B** (multiplexer), **TL072CP** (op-amp), and a handful of CMOS logic ICs — **CD4013BE**, **CD4069CN**, and **CD4018BE** — to handle the digital side of edge detection and gating.
 
-*[Image: Figure 1 — functional block diagram of the whole system, transmitter through display]*
+
+![image 1](/assets/images/projects/ultra_sonic/functional_block.png)
+*[Image: functional block diagram of the system]*
 
 ## How the system is laid out
 
@@ -47,7 +49,8 @@ $$
 
 Both of these signals feed into a **CD4053B** multiplexer, which mixes the fast carrier with the slow tone. That combined signal is what actually drives the transmitter — and it's also what makes the receiver's job possible, since the receiver is really looking for that slower envelope riding on top of the carrier.
 
-*[Image: Figure 2 — full schematic, ideally a slightly zoomed-in crop of the transmitter block]*
+![image 2](/assets/images/projects/ultra_sonic/full_schematic.png)
+*[Image: full schematic]*
 
 ## Picking the signal back out of the noise
 
@@ -60,11 +63,13 @@ The chain looks like this:
 - **Low-pass filter** — tuned to pass only the slower modulating envelope (the 10 Hz tone), filtering out the 40 kHz carrier once it's done its job.
 - **Schmitt trigger** — built from a comparator with a pull-up resistor to add hysteresis, which is what keeps noise from causing false triggering. Without this stage, the spikes in the raw signal would get misread as valid edges.
 
-*[Image: Figure 3 / board photos — the assembled boards with the wiring color code (red = VCC, blue = VEE, black = ground, yellow = signal)]*
+![image 3](/assets/images/projects/ultra_sonic/board_photos.png)
+*[Image: board photos — the assembled boards with the wiring color code (red = VCC, blue = VEE, black = ground, yellow = signal)]*
 
 Once the signal is clean, it gets fed into a **CD4013BE** flip-flop, which converts the leading edge into a short, sharp pulse — essentially a synthetic "start" marker for the timing circuit. That narrow pulse only works because of how sharp it is; a slow edge here would make the whole timing measurement fuzzy. A second, independently generated 32 kHz signal from another NE555 stage gets combined with this pulse through **CD4018BE** (acting as an AND gate) and **CD4069CN** (acting as an inverter) to produce the final signal that drives the counter.
 
-*[Image: Figure 4(d) — oscilloscope capture of the narrow pulse]*
+![image 4](/assets/images/projects/ultra_sonic/narrow_pulse.PNG)
+*[Image: Oscilloscope capture of the narrow pulse]*
 
 ## Testing it
 
@@ -75,10 +80,12 @@ I used LTSpice to simulate the circuit before ever touching a breadboard, and do
 - The Schmitt trigger stage produced a clean, shifted square pulse — the "leading signal" the rest of the system relies on.
 - The final narrow pulse output showed the sharp charge/discharge behavior expected from the hysteresis stage.
 
-*[Image: Figure 4(a–c) — oscilloscope traces at each cleanup stage, shown side by side]*
+![image 5](/assets/images/projects/ultra_sonic/signal_low_pass.PNG)
+*[Image: Low Pass Signal]*
 
 With everything wired up, the display panel read out **76 cm** for the test distance — confirming the whole chain, from carrier generation to final count, actually worked end to end.
 
+![image 6](/assets/images/projects/ultra_sonic/clockunit.png)
 *[Image: Photo of the display panel showing the 76cm reading]*
 
 ## What I'd fix next
