@@ -37,11 +37,23 @@ li { margin: 0.4em 0; }
   padding: 4em 2em;
 }
 
-table, th, td {
+table {
   width: 100%;
-  border: thin solid black;
+  max-width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
+  overflow-x: auto;
+}
+
+th, td {
+  border: thin solid black;
   padding: 0.4em;
+  vertical-align: top;
+}
+
+th:first-child,
+td:first-child {
+  width: 38%;
 }
 
 div.highlighter-rouge pre code, pre code.highlighter-rouge {
