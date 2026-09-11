@@ -11,6 +11,11 @@ project_entries:
     desc: Building a distance measurement system with analog ICs and no microcontroller.
     highlight: CASE STUDY
 
+  - title: Graphene GFET Ammonia Rinse Study
+    url: /projects/graphene-gfet-ammonia-rinse/
+    desc: Improving Dirac-point stability and mobility in a back-gated graphene transistor.
+    highlight: RESEARCH
+
 #old_project_entries:
   #- title: Soopr
     #url: https://www.soopr.co
