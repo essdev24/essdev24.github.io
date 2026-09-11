@@ -4,17 +4,6 @@ title: "No Arduino, No Code: Building an Analog Ultrasonic Distance Sensor from 
 permalink: /projects/non-invasive-analog-distance-sensor/
 ---
 
-> **Setup note (remove before publishing):** This post uses LaTeX-style equations (`$$...$$`). For these to render as real math on GitHub Pages, add MathJax to your site layout's `<head>` once:
->
-> ```html
-> <script>
-> MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
-> </script>
-> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
-> ```
->
-> Once it's in your layout, it applies site-wide to every post.
-
 # Building a Non-Invasive Analog Distance Measurement System (No Microcontroller Required)
 
 When most people think about building a distance sensor, they reach for an Arduino, plug in an ultrasonic module, and let a microcontroller handle all the timing. I wanted to see if I could skip that step entirely — no code, no MCU, just discrete analog ICs doing the work of generating, sending, receiving, and timing an ultrasonic pulse. This post walks through how I built it, what worked, what fought back, and what I'd change next time.
