@@ -4,8 +4,6 @@ title: "Graphene Field-Effect Transistors: How an Ammonia Rinse Fixed Our Dirac 
 permalink: /projects/graphene-gfet-ammonia-rinse/
 ---
 
-When most people think about building a distance sensor, they reach for an Arduino, plug in an ultrasonic module, and let a microcontroller handle all the timing. I wanted to see if I could skip that step entirely — no code, no MCU, just discrete analog ICs doing the work of generating, sending, receiving, and timing an ultrasonic pulse. This post walks through how I built it, what worked, what fought back, and what I'd change next time.
-
 ## Why graphene, and why it's harder than it sounds
 
 Silicon transistors are running into physical limits as devices keep shrinking, which is part of why graphene has gotten so much attention as an alternative channel material — it's atomically thin, has a symmetric band structure, and in ideal, suspended conditions can theoretically hit mobilities north of 100,000 cm²/Vs. In a back-gated GFET, a voltage on the gate capacitively modulates the carrier concentration in the graphene channel, shifting the Fermi level and letting you tune conduction between electrons and holes — this ambipolar behavior is one of graphene's defining features.
