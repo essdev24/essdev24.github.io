@@ -56,6 +56,25 @@ td:first-child {
   width: 38%;
 }
 
+p + table,
+blockquote + table,
+ul + table,
+ol + table {
+  margin-top: 1rem;
+}
+
+/* More compact device parameter tables */
+body .w table {
+  width: min(100%, 420px);
+  table-layout: fixed;
+  margin: 0 auto;
+}
+
+body .w table th:first-child,
+body .w table td:first-child {
+  width: 45%;
+}
+
 div.highlighter-rouge pre code, pre code.highlighter-rouge {
   display: block;
   overflow-x: auto;
