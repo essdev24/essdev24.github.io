@@ -20,19 +20,19 @@ When editing check for dates, linked pages, referenced links, etc. This makes th
 Search for "page name" wiki whiles you’re logged in to the wiki page. To get the article you want to edit.
 
 * 'Click on edit'
-![image 1](/assets/images/1.jpg)
+![image 1](/assets/images/wiki_blog/1.jpg)
 
 * By default, 'Edit' is already using the visual editor setting. Go to the article section.
-![image 2](/assets/images/2.jpg)
+![image 2](/assets/images/wiki_blog/2.jpg)
 
 *'Make sure you have found your source before this by searching for news on the subject on [google][google-web] to verify your sources' (I searched for her birthdays did the math to be sure what the articles are saying is true before adding.) Insert cursor on where you want to reference - I will be referencing her date of birth. Click on cite.
 
 **Copy URL from the external article and paste it to the Cite button pop-up**
-![image 3](/assets/images/4.jpg)
+![image 3](/assets/images/wiki_blog/4.jpg)
 
 Click on **generate and insert the cite** We can also reuse a cite by following the same procedure but rather we click on Re-use to choose the source. Add if it is already on the page.
 
-![image 4](/assets/images/5.jpg)
+![image 4](/assets/images/wiki_blog/5.jpg)
 Click on **PUBLISH CHANGES** and comment. Your editing will be saved.
 
 **Note the tick box Minor Edit is for fewer edits and Watch this page is for tracking to keep watch on the page. This will be further explained when you attend one of our workshops**
