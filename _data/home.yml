@@ -26,6 +26,11 @@ project_entries:
     desc: Comparing EDF, LDF, and LLF behavior on dependency-heavy, deadline-driven task sets.
     highlight: REAL-TIME SYSTEMS
 
+  - title: Building a Two-Loop Fan Control System
+    url: /projects/building-a-two-loop-fan-control-system/
+    desc: Debugging PID tuning, bilinear transforms, and a strange simulation freeze in a distributed fan loop.
+    highlight: CONTROL SYSTEMS
+
 #old_project_entries:
   #- title: Soopr
     #url: https://www.soopr.co
