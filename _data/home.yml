@@ -16,6 +16,11 @@ project_entries:
     desc: Improving Dirac-point stability and mobility in a back-gated graphene transistor.
     highlight: RESEARCH
 
+  - title: Why PID Controllers Fall Apart Under Network Delay
+    url: /projects/pid-controllers-fall-apart-under-network-delay/
+    desc: A control-systems case study on delay, jitter, and instability in an inverted pendulum.
+    highlight: CONTROL SYSTEMS
+
 #old_project_entries:
   #- title: Soopr
     #url: https://www.soopr.co
