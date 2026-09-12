@@ -21,6 +21,11 @@ project_entries:
     desc: A control-systems case study on delay, jitter, and instability in an inverted pendulum.
     highlight: CONTROL SYSTEMS
 
+  - title: Building and Breaking Five Real-Time Schedulers
+    url: /projects/building-and-breaking-five-real-time-schedulers/
+    desc: Comparing EDF, LDF, and LLF behavior on dependency-heavy, deadline-driven task sets.
+    highlight: REAL-TIME SYSTEMS
+
 #old_project_entries:
   #- title: Soopr
     #url: https://www.soopr.co
