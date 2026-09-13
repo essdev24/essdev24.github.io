@@ -4,18 +4,6 @@ title: About essuanlive
 ---
 
 
-Expert in data analysis with excellent understanding of processing data,
-using techniques, virtual tools such as Azure, Tableau, r-studio for
-visualization. Strictly focused with
-analytical approach using numerical
-simulations to predict features of a
-data (Machine Learning).
-Comprehensive knowledge in GIS
-techniques. Using spatial data to
-project risk in flood prone areas.
-Safely setup a local and online
-communication using communication
-exchanges (PABx)and remote
-connections with Internet protocols.
+Electrical Engineering student specializing in Electronic Design Technology, with a background in IT systems, networking, and data analysis. Currently focused on semiconductor design, embedded systems, and control electronics — working across digital and analog circuits, CMOS technologies, and hardware/firmware development. I combine that earlier systems background with electronics to build practical, reliable hardware solutions, and document the process through project case studies.
 	
 
