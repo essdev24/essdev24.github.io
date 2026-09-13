@@ -16,6 +16,11 @@ project_entries:
     desc: Improving Dirac-point stability and mobility in a back-gated graphene transistor.
     highlight: RESEARCH
 
+  - title: Building the Foundations of a Voice Recognition System in LabVIEW
+    url: /projects/building-the-foundations-of-a-voice-recognition-system-in-labview/
+    desc: Building a LabVIEW signal-processing foundation for live audio capture and simple voice recognition.
+    highlight: SIGNAL PROCESSING
+
   - title: Why PID Controllers Fall Apart Under Network Delay
     url: /projects/pid-controllers-fall-apart-under-network-delay/
     desc: A control-systems case study on delay, jitter, and instability in an inverted pendulum.
