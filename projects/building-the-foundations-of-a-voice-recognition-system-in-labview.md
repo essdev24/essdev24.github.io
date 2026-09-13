@@ -4,8 +4,6 @@ title: "Building the Foundations of a Voice Recognition System in LabVIEW"
 permalink: /projects/building-the-foundations-of-a-voice-recognition-system-in-labview/
 ---
 
-# Building the Foundations of a Voice Recognition System in LabVIEW
-
 If you're just getting started with LabVIEW, one of the best ways to actually understand it is to build a handful of small, focused VIs (Virtual Instruments) rather than jumping straight into one huge project. That's exactly how this project came together — a set of VIs that build up, piece by piece, toward a simple voice recognition system: capturing an audio signal from a microphone and analyzing its frequency content to identify what's being said or who's speaking.
 
 Before you can do anything clever with voice, though, you need a solid handle on signals themselves — how to generate them, clean them up, and measure them. So this project starts with the fundamentals of signal processing and works up to the real goal: recording and analyzing a live voice signal.
