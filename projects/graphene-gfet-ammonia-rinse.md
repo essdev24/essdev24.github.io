@@ -10,6 +10,8 @@ Silicon transistors are running into physical limits as devices keep shrinking, 
 
 The catch is that once you put graphene on a real substrate instead of suspending it in a vacuum, mobility drops hard — typically into the 1,000 to 24,000 cm²/Vs range — because of substrate-induced scattering and impurities. And because graphene has no intrinsic bandgap, these devices are hard to switch fully off, which limits them for digital logic but makes them genuinely promising for analog and RF applications.
 
+
+![image 1](/assets/images/projects/graphene_gfet/scheme_gfet.png)
 *[Image: Figure 1 — schematic cross-section of the GFET, showing the doped silicon back-gate, SiO₂ dielectric, Cr/Au source/drain, and graphene channel]*
 
 ## Building the device
@@ -20,6 +22,7 @@ The catch is that once you put graphene on a real substrate instead of suspendin
 
 **Defining the channel.** A second lithography step (positive resist, AZ 5214E) patterned the channel geometry, and reactive ion etching with an oxygen plasma removed the unprotected graphene, leaving a clean channel between source and drain.
 
+![image 2](/assets/images/projects/graphene_gfet/S2_after_rie_2.png)
 *[Image: Figure 2 — optical microscope image of the finished device, with the 100 µm scale bar visible]*
 
 **Device parameters**, for reference:
@@ -35,6 +38,8 @@ The catch is that once you put graphene on a real substrate instead of suspendin
 
 We characterized the devices at room temperature using a probe station connected to a semiconductor parameter analyzer, sweeping the back-gate voltage from −30 V to 70 V while holding the source-drain voltage at a constant 100 mV. Current compliances were set conservatively (10 mA drain, 10 µA gate leakage) to avoid frying the channel.
 
+
+![image 3](/assets/images/projects/graphene_gfet/sample_b_curve-1.png)
 *[Image: Figure 3 — I-V transfer characteristics comparing Sample A and Sample B]*
 
 The resulting curve is where graphene's ambipolar nature actually shows up visually: current is high on both ends of the sweep and dips to a minimum at the Dirac point, with hole conduction on the left side of the curve and electron conduction on the right.
