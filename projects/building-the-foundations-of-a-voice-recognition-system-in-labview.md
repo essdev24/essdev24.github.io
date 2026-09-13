@@ -16,14 +16,13 @@ LabVIEW is a graphical programming language, which means instead of writing line
 
 ## Project Overview
 
-The end goal was a basic voice recognition system — something that could record a voice signal and analyze its frequency characteristics well enough to distinguish or identify it. Getting there meant building up a toolkit of smaller VIs first, each one building on core LabVIEW concepts:
+The end goal was a basic **voice recognition system** — something that could record a voice signal and analyze its frequency characteristics well enough to distinguish or identify it. Getting there meant building up a toolkit of smaller VIs first, each one building on core LabVIEW concepts:
 
-- `sinewave.vi` and `continuous_sinewave.vi` — generating basic and continuous sine waveforms, to understand signals before working with real ones
-- `white_noise_generation.vi` — generating random white noise, to simulate the kind of noise a real microphone picks up
-- `filtering_white_noise_non_continuous.vi` — applying a filter to clean up that noise, since a real voice signal needs to be separated from background noise too
-- `frequency_analysis.vi` — detecting amplitude and frequency from a signal, the core technique voice recognition depends on
-- `sound_input.vi` — recording live audio from a microphone — the actual voice capture stage
-- `calculator_assignment.vi` — a simple calculator, a classic first LabVIEW exercise
+- **`sinewave.vi`** and **`continuous_sinewave.vi`** — generating basic and continuous sine waveforms, to understand signals before working with real ones
+- **`white_noise_generation.vi`** — generating random white noise, to simulate the kind of noise a real microphone picks up
+- **`filtering_white_noise_non_continuous.vi`** — applying a filter to clean up that noise, since a real voice signal needs to be separated from background noise too
+- **`frequency_analysis.vi`** — detecting amplitude and frequency from a signal, the core technique voice recognition depends on
+- **`sound_input.vi`** — recording live audio from a microphone — the actual voice capture stage
 
 Let's go through them roughly in the order you'd want to learn them, building toward that final voice recognition goal.
 
@@ -31,9 +30,9 @@ Let's go through them roughly in the order you'd want to learn them, building to
 
 Every signal processing journey starts with the humble sine wave. `sinewave.vi` builds a single waveform using LabVIEW's built-in Sine Wave function, letting you set parameters like amplitude, frequency, and phase, and then displays the result on a waveform graph.
 
-`continuous_sinewave.vi` takes it a step further by wrapping the wave generation in a loop, so the signal streams continuously rather than as a single static plot. This is an important shift conceptually — it's the difference between generating a signal and generating live, ongoing data, which is how most real instrumentation actually works.
+`continuous_sinewave.vi` takes it a step further by wrapping the wave generation in a loop, so the signal streams continuously rather than as a single static plot. This is an important shift conceptually — it's the difference between generating *a* signal and generating *live, ongoing data*, which is how most real instrumentation actually works.
 
-**Beginner tip:** If you're following along, start with the static version first. Get comfortable with the Sine Wave Express VI and its inputs before you add a while loop around it. Adding the loop is simple mechanically, but understanding why you need it (continuous acquisition vs. one-shot generation) is the real lesson.
+**Beginner tip:** If you're following along, start with the static version first. Get comfortable with the Sine Wave Express VI and its inputs before you add a while loop around it. Adding the loop is simple mechanically, but understanding *why* you need it (continuous acquisition vs. one-shot generation) is the real lesson.
 
 ## Step 2: White Noise — Generate It, Then Clean It Up
 
@@ -43,7 +42,7 @@ Next up is white noise. `white_noise_generation.vi` uses LabVIEW's noise generat
 
 ## Step 3: Frequency Analysis — The Core of Voice Recognition
 
-`frequency_analysis.vi` is where things get more interesting, and it's really the heart of the whole project. Voice recognition fundamentally comes down to identifying the frequency characteristics of a sound signal — different voices, and different sounds within a voice, have distinct frequency signatures. So a VI that can reliably extract amplitude and frequency from a signal is the core building block everything else depends on.
+`frequency_analysis.vi` is where things get more interesting, and it's really the heart of the whole project. Voice recognition fundamentally comes down to identifying the frequency characteristics of a sound signal — different voices, and different sounds within a voice, have distinct frequency signatures. So a VI that can reliably extract **amplitude** and **frequency** from a signal is the core building block everything else depends on.
 
 Running it against a test signal produced results like this:
 
@@ -86,18 +85,14 @@ A project like this isn't very useful if you can't save your results, so file I/
 
 It's a simple pattern, but it's the backbone of any VI that needs to log data over time rather than just displaying it once and losing it.
 
-## Step 6: The Calculator (Where It All Started)
-
-Last but not least, `calculator_assignment.vi` is a basic calculator — the classic "hello world" of LabVIEW. It's a good reminder that even a project full of waveforms and frequency analysis started with the same fundamentals everyone learns first: numeric controls, case structures, and basic arithmetic functions.
-
 ## Putting It Together: Toward Voice Recognition
 
 Stack these pieces up and the shape of the full system becomes clear:
 
-1. `sound_input.vi` captures a live voice signal from the microphone
-2. A filtering VI cleans the signal up
-3. `frequency_analysis.vi` extracts the amplitude and frequency characteristics of that voice signal
-4. The file-saving pattern logs those characteristics to a spreadsheet, building a dataset that could be compared across recordings — the basic groundwork for actually recognizing a voice rather than just capturing one
+1. **`sound_input.vi`** captures a live voice signal from the microphone
+2. **`filtering_white_noise_non_continuous.vi`**-style filtering cleans the signal up
+3. **`frequency_analysis.vi`** extracts the amplitude and frequency characteristics of that voice signal
+4. The file-saving pattern logs those characteristics to a spreadsheet, building a dataset that could be compared across recordings — the basic groundwork for actually *recognizing* a voice rather than just capturing one
 
 That's the essence of a beginner-level voice recognition pipeline: capture → clean → analyze → compare. The sine wave and noise-generation VIs earlier in the project weren't side quests — they were how I built confidence in each piece of that pipeline (waveform generation, filtering, frequency detection) using simple, controllable test signals before pointing it at an unpredictable real voice.
 
